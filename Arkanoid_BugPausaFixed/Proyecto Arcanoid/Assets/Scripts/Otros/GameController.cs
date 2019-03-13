@@ -116,6 +116,13 @@ public class GameController : MonoBehaviour
         Invoke("CargaNivel5", tiempoAnimacion);
 
     }
+    public void ActivaPersianaOculta()
+    {
+
+        persiana.SetTrigger("Baja");
+        Invoke("CargaNivelOculto", tiempoAnimacion);
+
+    }
 
 
     //Funciones de carga de Escenas
@@ -156,6 +163,13 @@ public class GameController : MonoBehaviour
     public void CargaNivel5()
     {
         SceneManager.LoadScene(5);
+        ListaBolas.vidas = 3;
+        MaquinaTiempo.prehistoria = false;
+        Movimiento.enPartida = false;
+    }
+    public void CargaNivelOculto()
+    {
+        SceneManager.LoadScene(7);
         ListaBolas.vidas = 3;
         MaquinaTiempo.prehistoria = false;
         Movimiento.enPartida = false;

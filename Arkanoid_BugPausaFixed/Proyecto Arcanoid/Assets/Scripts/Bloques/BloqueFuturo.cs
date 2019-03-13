@@ -56,7 +56,9 @@ public class BloqueFuturo : MonoBehaviour
         if (col.gameObject.CompareTag("Bola") && destruible == true)
         {
             --vidas;
-            sonidoRotura.Play();
+            if (sonidoRotura != null) {
+                sonidoRotura.Play();
+            }
             if (vidas == 1)
             {
                 CambiaSprite();
